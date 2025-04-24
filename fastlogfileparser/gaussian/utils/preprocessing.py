@@ -25,10 +25,7 @@ def crush_ginc_block(opened_file):
         # strip last two characters
         elif in_route_section:
             # check if block is over
-            if (
-                " ----------------------------------------------------------------------\n"
-                == line
-            ):
+            if line.startswith(" -------------------------------------------------------"):
                 in_route_section = False
                 line = "\n"
             else:
